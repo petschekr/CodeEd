@@ -3,25 +3,38 @@
 	height: 600px;
 }
 @sidebarH: 600px;
+@textcolor: darken(white, 18%);
+@bgcolor: darken(grey, 20%);
 #sidebar {
     float: left;
     width: 170px;
-    background-color: darken(grey, 20%);
-    color: darken(white, 10%);
+    background-color: @bgcolor;
+    color: @textcolor;
     height: @sidebarH;
     font-family: "SourceSans";
     font-size: 13px;
+    border-radius: 4px;
     ul {
         list-style-type: none;
         padding-left: 20px;
+        li {
+            margin-top: 3px;
+            cursor: default;
+        }
     }
     .unsaved {
+        margin-left: -11px;
         &:before {
             content: "●";
             font-size: 10px;
-            padding-right: 5px;
+            padding-right: 4px;
             position: relative;
             top: -1px;
+            color: rgb(238, 238, 238);
         }
+    }
+    .open {
+        color: lighten(@textcolor, 10%);
+        font-weight: 500;
     }
 }
