@@ -2,3 +2,26 @@
 	overflow: auto;
 	height: 600px;
 }
+@sidebarH: 600px;
+#sidebar {
+    float: left;
+    width: 170px;
+    background-color: darken(grey, 20%);
+    color: darken(white, 10%);
+    height: @sidebarH;
+    font-family: "SourceSans";
+    font-size: 13px;
+    ul {
+        list-style-type: none;
+        padding-left: 20px;
+    }
+    .unsaved {
+        &:before {
+            content: "●";
+            font-size: 10px;
+            padding-right: 5px;
+            position: relative;
+            top: -1px;
+        }
+    }
+}
