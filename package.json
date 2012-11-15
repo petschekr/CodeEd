@@ -1,0 +1,11 @@
+{
+	"main": "src/index.html",
+	"name": "CodeEd",
+	"version": "0.0.1",
+	"window": {
+		"toolbar": true,
+		"position": "center",
+		"width": 1000,
+		"height": 650
+	}
+}
