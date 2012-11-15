@@ -9,9 +9,14 @@
 		<script src="codemirror-2.35/lib/codemirror.js"></script>
 		<link rel="stylesheet" href="codemirror-2.35/lib/codemirror.css" />
 		<!-- CodeMirror Modes -->
+		<script src="codemirror-2.35/mode/xml/xml.js"></script>
 		<script src="codemirror-2.35/mode/javascript/javascript.js"></script>
+		<script src="codemirror-2.35/mode/css/css.js"></script>
+		<script src="codemirror-2.35/mode/less/less.js"></script>
+		<script src="codemirror-2.35/mode/coffeescript.js"></script>
+			<!-- Load HTML *after* xml, javascript and css -->
+		<script src="codemirror-2.35/mode/htmlmixed/htmlmixed.js"></script>
 		<!-- CodeMirror Themes -->
-		<!--
 		<link rel="stylesheet" href="codemirror-2.35/theme/ambiance.css" />
 		<link rel="stylesheet" href="codemirror-2.35/theme/blackboard.css" />
 		<link rel="stylesheet" href="codemirror-2.35/theme/cobalt.css" />
@@ -24,12 +29,18 @@
 		<link rel="stylesheet" href="codemirror-2.35/theme/night.css" />
 		<link rel="stylesheet" href="codemirror-2.35/theme/rubyblue.css" />
 		<link rel="stylesheet" href="codemirror-2.35/theme/vibrant-ink.css" />
-		<link rel="stylesheet" href="codemirror-2.35/theme/xq-dark.css" />-->
+		<link rel="stylesheet" href="codemirror-2.35/theme/xq-dark.css" />
 		<link rel="stylesheet" href="brackets-theme/brackets.css" />
 		<!-- My scripts followed by CoffeeScript.js -->
+		<link rel="stylesheet/less" type="text/css" href="editor.less" />
 		<script type="text/coffeescript" src="editor.coffee"></script>
+		<script src="libs/less-1.3.1.min.js"></script>
 		<script src="libs/coffeescript.js"></script>
 	</head>
 	<body>
+        <div id="sidebar">
+           <!-- Stuff --> 
+        </div>
+		<div id="code"></div>
 	</body>
 </html>
