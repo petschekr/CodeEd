@@ -1,41 +1,61 @@
-.CodeMirror-scroll {
-	overflow: auto;
-	height: 600px;
-}
-@sidebarH: 600px;
+@pageH: 600px;
 @textcolor: darken(white, 18%);
 @bgcolor: darken(grey, 20%);
+.Char () {
+    font-size: 9px;
+    position: relative;
+    top: -2px;
+    padding-right: 4px;
+    color: rgb(238, 238, 238);
+}
+.CodeMirror-scroll {
+	overflow: auto;
+	height: @pageH;
+}
 #sidebar {
+    -webkit-user-select: none;
     float: left;
     width: 170px;
     background-color: @bgcolor;
     color: @textcolor;
-    height: @sidebarH;
+    height: @pageH;
     font-family: "SourceSans";
     font-size: 13px;
     border-radius: 4px;
+    overflow: scroll;
     ul {
         list-style-type: none;
         padding-left: 20px;
+        margin-top: 8px;
         li {
             margin-top: 3px;
             cursor: default;
+            text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.7);
         }
-    }
-    .unsaved {
-        margin-left: -11px;
-        &:before {
-            content: "●";
-            font-size: 9px;
-            padding-right: 4px;
-            // Circle offset
-            position: relative;
-            top: -2px;
-            color: rgb(238, 238, 238);
+        .unsaved {
+            margin-left: -11px;
+            &:before {
+                content: "●";
+                .Char;
+            }
         }
-    }
-    .open {
-        color: lighten(@textcolor, 10%);
-        font-weight: 500;
+        .folder {
+            &:before {
+                content: "▶";
+                .Char;
+                cursor: pointer;
+            }
+        }
+        .folder.open {
+            &:before {
+                content: "▼";
+                .Char;
+                cursor: pointer;
+            }
+        }
+        .open {
+            color: lighten(@textcolor, 10%);
+            font-weight: 500;
+        }
     }
 }
