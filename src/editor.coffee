@@ -94,3 +94,7 @@ $ ->
                         about = about.replace /\"/g, "&quot;"
                         $("#sidebar ul").append """<li data-about="#{about}">#{file.name}</li>"""
     authDropbox()
+    $("#sidebar ul li").click ->
+        data = $(@).data "about"
+        if data.Type is "folder"
+            undefined
